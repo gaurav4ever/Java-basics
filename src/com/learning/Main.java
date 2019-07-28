@@ -1,5 +1,6 @@
 package com.learning;
 
+import com.learning.bulderPattern.Cart;
 import com.learning.bulderPattern.Order;
 import com.learning.singleton.Service1;
 import com.learning.singleton.Service2;
@@ -25,5 +26,12 @@ public class Main {
                 .setCustomerId("Harshit")
                 .setOrderId("O001")
                 .build();
+        Cart cart = Cart.Builder.newInstance()
+                .setVal1("Mac book pro")
+                .setVal2("JBL Flip")
+                .setVal3("Echo dot")
+                .build();
+        System.out.println("Cart val1:" + cart.getVal1() + " Dbname:" + cart.getVal2() + " MxaConn:" + cart.getVal3());
+
     }
 }
