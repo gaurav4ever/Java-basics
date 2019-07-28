@@ -1,8 +1,13 @@
 package com.learning;
 
+import com.learning.bulderPattern.Cart;
+import com.learning.bulderPattern.Order;
+import com.learning.factory.*;
 import com.learning.singleton.Service1;
 import com.learning.singleton.Service2;
 import com.learning.singleton.Service3;
+
+import java.util.Date;
 
 public class Main {
 
@@ -16,5 +21,35 @@ public class Main {
         System.out.println("Service2 Count:" + s2.getCount() + " Dbname:" + s2.getDbName() + " MxaConn:" + s2.getMaxconn() + " Exception:" + s2.getExc());
         System.out.println("Service1 Count:" + s3.getCount() + " Dbname:" + s3.getDbName() + " MxaConn:" + s3.getMaxconn() + " Exception:" + s3.getExc());
 
+        Order order = Order.Builder.newInstance()
+                .setCarId("123")
+                .setCreatedAt(new Date())
+                .setCustomerId("Harshit")
+                .setOrderId("O001")
+                .build();
+        Cart cart = Cart.Builder.newInstance()
+                .setVal1("Mac book pro")
+                .setVal2("JBL Flip")
+                .setVal3("Echo dot")
+                .build();
+        System.out.println("Cart val1:" + cart.getVal1() + " Dbname:" + cart.getVal2() + " MxaConn:" + cart.getVal3());
+
+        CarFactory carFactory = new CarFactory();
+        BMW b = (BMW) carFactory.getInstance("BMW");
+        b.setName("X-Series");
+
+        Honda h = (Honda) carFactory.getInstance("Honda");
+        h.setName("city-Series");
+
+        System.out.println("BMW car name: " + b.getName() + " Honda Car Name: " + h.getName());
+
+        MusicFactory musicFactory = new MusicFactory();
+        Pop p = (Pop) musicFactory.getInstance("pop");
+        p.setName("ed-sheeran");
+
+        HipHop h1 = (HipHop) musicFactory.getInstance("hip hop");
+        h1.setName("eminem");
+
+        System.out.println("Pop: " + p.getName() + " Hip hop:" + h1.getName());
     }
 }
