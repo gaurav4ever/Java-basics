@@ -1,5 +1,9 @@
 package com.learning;
 
+import com.learning.singleton.Service1;
+import com.learning.singleton.Service2;
+import com.learning.singleton.Service3;
+
 public class Main {
 
     public static void main(String[] args) {

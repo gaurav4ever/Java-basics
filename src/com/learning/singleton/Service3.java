@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.singleton;
 
 public class Service3 {
 
