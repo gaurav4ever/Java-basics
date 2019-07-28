@@ -1,8 +1,11 @@
 package com.learning;
 
+import com.learning.bulderPattern.Order;
 import com.learning.singleton.Service1;
 import com.learning.singleton.Service2;
 import com.learning.singleton.Service3;
+
+import java.util.Date;
 
 public class Main {
 
@@ -16,5 +19,11 @@ public class Main {
         System.out.println("Service2 Count:" + s2.getCount() + " Dbname:" + s2.getDbName() + " MxaConn:" + s2.getMaxconn() + " Exception:" + s2.getExc());
         System.out.println("Service1 Count:" + s3.getCount() + " Dbname:" + s3.getDbName() + " MxaConn:" + s3.getMaxconn() + " Exception:" + s3.getExc());
 
+        Order order = Order.Builder.newInstance()
+                .setCarId("123")
+                .setCreatedAt(new Date())
+                .setCustomerId("Harshit")
+                .setOrderId("O001")
+                .build();
     }
 }
