@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.singleton;
 
 public class Dbutil {
 
@@ -33,10 +33,6 @@ public class Dbutil {
 
     public int getCount () {
         return count;
-    }
-
-    public static Dbutil getDb() {
-        return db;
     }
 
     public String getDbname() {
