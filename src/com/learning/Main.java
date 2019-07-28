@@ -2,9 +2,7 @@ package com.learning;
 
 import com.learning.bulderPattern.Cart;
 import com.learning.bulderPattern.Order;
-import com.learning.factory.BMW;
-import com.learning.factory.CarFactory;
-import com.learning.factory.Honda;
+import com.learning.factory.*;
 import com.learning.singleton.Service1;
 import com.learning.singleton.Service2;
 import com.learning.singleton.Service3;
@@ -44,5 +42,14 @@ public class Main {
         h.setName("city-Series");
 
         System.out.println("BMW car name: " + b.getName() + " Honda Car Name: " + h.getName());
+
+        MusicFactory musicFactory = new MusicFactory();
+        Pop p = (Pop) musicFactory.getInstance("pop");
+        p.setName("ed-sheeran");
+
+        HipHop h1 = (HipHop) musicFactory.getInstance("hip hop");
+        h1.setName("eminem");
+
+        System.out.println("Pop: " + p.getName() + " Hip hop:" + h1.getName());
     }
 }
