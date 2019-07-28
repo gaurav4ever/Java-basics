@@ -35,10 +35,6 @@ public class Dbutil {
         return count;
     }
 
-    public static Dbutil getDb() {
-        return db;
-    }
-
     public String getDbname() {
         return dbname;
     }
