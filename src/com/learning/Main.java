@@ -2,6 +2,9 @@ package com.learning;
 
 import com.learning.bulderPattern.Cart;
 import com.learning.bulderPattern.Order;
+import com.learning.factory.BMW;
+import com.learning.factory.CarFactory;
+import com.learning.factory.Honda;
 import com.learning.singleton.Service1;
 import com.learning.singleton.Service2;
 import com.learning.singleton.Service3;
@@ -33,5 +36,13 @@ public class Main {
                 .build();
         System.out.println("Cart val1:" + cart.getVal1() + " Dbname:" + cart.getVal2() + " MxaConn:" + cart.getVal3());
 
+        CarFactory carFactory = new CarFactory();
+        BMW b = (BMW) carFactory.getInstance("BMW");
+        b.setName("X-Series");
+
+        Honda h = (Honda) carFactory.getInstance("Honda");
+        h.setName("city-Series");
+
+        System.out.println("BMW car name: " + b.getName() + " Honda Car Name: " + h.getName());
     }
 }
